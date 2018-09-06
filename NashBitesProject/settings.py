@@ -131,7 +131,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 #Specify where to redirect the user upon a successful login
-LOGIN_REDIRECT_URL = 'vendor/'
+LOGIN_REDIRECT_URL = '/vendor/'
 
 #Specify where to redirect the user upon a successful login
 LOGOUT_REDIRECT_URL = '/'

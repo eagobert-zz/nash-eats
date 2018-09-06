@@ -1,2 +1,3 @@
-from .index import index
-from .vendor import vendor
+from .index import Welcome
+from .vendor import Vendor
+from .user import User
