@@ -1,3 +1,4 @@
+{% block %}
 <h2>Login</h2>
 <form method="post">
   {% csrf_token %}
@@ -7,3 +8,4 @@
 
 <!-- Add registration link below -->
 <p><a href='{% url 'VendorView' %}'>Need to Register? Click here!</a></p>
+{% endblock %}
