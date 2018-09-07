@@ -1,0 +1,13 @@
+{% block registration %}
+
+<form method="post">
+
+  {% csrf_token %}
+  {{ registration_form.as_p }}
+  {{ user_form.as_p }}
+
+  <button type="submit">Sign Up</button>
+
+</form>
+
+{% endblock registration %}

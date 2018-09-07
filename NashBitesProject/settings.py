@@ -55,7 +55,8 @@ ROOT_URLCONF = 'NashBitesProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        #Direct Django to look for templates at the project level 'DIRS'
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,3 +129,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
 MEDIA_URL = '/media/'
+
+#Specify where to redirect the user upon a successful login
+LOGIN_REDIRECT_URL = '/vendor/'
+
+#Specify where to redirect the user upon a successful login
+LOGOUT_REDIRECT_URL = '/'
