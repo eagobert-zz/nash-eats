@@ -8,11 +8,6 @@
   <a class="navbar-brand">NASHEats</a>
 
   {% if not user.is_authenticated %}
-  <div>
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Vendor Profile</button>
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="{% url 'logout' %}">Logout</a></button>
-  </div>
-
   <form class="form-inline">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
   </form>
@@ -20,5 +15,10 @@
   <div>
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Vendor Login</button>
   </div>
+  {% else %}
+  <div>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Vendor Profile</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="{% url 'logout' %}">Logout</a></button>
+    </div>
   {% endif %}
 </nav>
