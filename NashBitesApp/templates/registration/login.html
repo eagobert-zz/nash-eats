@@ -1,4 +1,7 @@
-{% block %}
+{% extends 'index.html' %}
+
+{% block content%}
+
 <h2>Login</h2>
 <form method="post">
   {% csrf_token %}
@@ -7,5 +10,5 @@
 </form>
 
 <!-- Add registration link below -->
-<p><a href='{% url 'VendorView' %}'>Need to Register? Click here!</a></p>
+<p><a href='{% url 'website:vendor' %}'>Need to Register? Click here!</a></p>
 {% endblock %}

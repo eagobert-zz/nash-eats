@@ -1,12 +1,24 @@
 {% load staticfiles %}
 
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand">Navbar</a>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+{% url 'website:home' as home %}
+{% url 'website:welcome' as welcome %}
+{% url 'website:vendor' as vendor %}
 
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Vendor Login</button>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Return to Home</button>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Vendor Profile</button>
-    </form>
-  </nav>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">NASHEats</a>
+
+  {% if not user.is_authenticated %}
+  <div>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Vendor Profile</button>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="{% url 'logout' %}">Logout</a></button>
+  </div>
+
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+  </form>
+
+  <div>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Vendor Login</button>
+  </div>
+  {% endif %}
+</nav>
