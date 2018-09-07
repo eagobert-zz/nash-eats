@@ -4,7 +4,7 @@ from django.db import models
 class Image(models.Model):
   """ Model represents vendor stored images """
   image = models.ImageField(upload_to='images')
-  vendor_id = models.ForeignKey(User, on_delete=models.CASCADE)
+  vendor = models.ForeignKey(User, on_delete=models.CASCADE)
 
   class Meta:
     db_table = 'images'

@@ -22,7 +22,7 @@ class Location(models.Model):
 
   timestamp = models.DateTimeField(auto_now_add=True)
 
-  vendor_id = models.ManyToManyField(User)
+  vendor = models.ManyToManyField(User)
 
 
   class Meta:

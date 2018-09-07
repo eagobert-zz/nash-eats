@@ -1,25 +1,36 @@
+from django.contrib.auth import authenticate, login
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.contrib.auth.models import User
 from NashBitesApp.forms import UserForm, RegistrationForm
-from django.contrib.auth import login
 
 
 def Register(request):
-  """ Creates new user and initial profile """
+    ''' Creates a new user and initial profile data '''
 
-  if request.method == 'POST':
-    user = User.objects.create_user(
-      username = UserForm(request.POST['username']),
-      password = UserForm(request.POST['password']),
-    )
+    if request.method == 'POST':
+        user_form = UserForm(data=request.POST)
+        registration_form = RegistrationForm(data=request.POST)
 
-    profile = RegistrationForm(data = request.POST)
-    
-    profile.vendor_id = user
+        if user_form.is_valid():
+          
+            user = user_form.save()
+            profile = registration_form.save(commit=False)
+            profile.vendor = user
+            profile.save()
 
-    user.save()
-    
-    profile.save()
 
-    if user is not None:
-      return login(request, user)
+            user.set_password(user.password)
+            user.save()
+            login(request, user)
+
+        return HttpResponseRedirect('/vendor/')
+
+    elif request.method == 'GET': 
+        registration_form = RegistrationForm()
+        user_form = UserForm()
+        context = {
+          'user_form': user_form, 
+          'registration_form': registration_form
+          }
+
+        return render(request, 'register.html', context)

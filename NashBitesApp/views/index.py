@@ -1,5 +1,7 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def Welcome(request):
-    return HttpResponse("Hello, world. You're at the Nash Bites App Welcome view.")
+    template_name = 'index.html'
+    context = {}
+    return render(request, template_name, context)
