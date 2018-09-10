@@ -1,24 +1,25 @@
-{% load staticfiles %}
-
-{% url 'website:home' as home %}
-{% url 'website:welcome' as welcome %}
-{% url 'website:vendor' as vendor %}
-
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand">NASHEats</a>
 
   {% if not user.is_authenticated %}
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-  </form>
+
+    <form class="form-inline">
+      <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    </form>
 
   <div>
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Vendor Login</button>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="{% url 'login' %}">Vendor Login</a></button>
   </div>
-  {% else %}
+  
+  {% endif %}
+
+  <!-- This is working -->
+  {% if user.is_authenticated %}
+
   <div>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Vendor Profile</button>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="{% url 'logout' %}">Logout</a></button>
-    </div>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Vendor Profile</button>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="{% url 'logout' %}">Logout</a></button>
+  </div>
+
   {% endif %}
 </nav>
