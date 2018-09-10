@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'NashBitesApp',
+    'geoposition'
 ]
 
 MIDDLEWARE = [
@@ -121,6 +122,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Add lines 126 thru 130 to load static files
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -135,3 +143,5 @@ LOGIN_REDIRECT_URL = '/vendor/'
 
 #Specify where to redirect the user upon a successful login
 LOGOUT_REDIRECT_URL = '/home/'
+
+GOOGLE_MAPS_API_KEY = 'AIzaSyBOw5oeysSynhp-aDSz8-bGTzvKsUDSlIM'
