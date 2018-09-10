@@ -1,4 +1,5 @@
 from .index import Welcome
 from .vendor import Vendor
-from .user import User
+from .home import HomeView
 from .register import Register
+from .navigation import NavView

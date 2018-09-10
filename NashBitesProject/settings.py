@@ -134,4 +134,4 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = '/vendor/'
 
 #Specify where to redirect the user upon a successful login
-LOGOUT_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/home/'
