@@ -2,4 +2,4 @@
 
 //Need Event handler to manage home view map
 
-//Need Event handler to manage vendor view map
+

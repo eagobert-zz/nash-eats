@@ -1,0 +1,18 @@
+{% block list_location %}
+
+<h4>Location History</h4>
+
+<ul>
+{% for location in location_list %}
+
+  <li>{{ location.address }}</li>
+
+{% empty%}
+  
+  <h5>Sorry, no location history is available.</h5>
+  
+  {% endfor %}
+
+</ul>
+
+{% endblock %}

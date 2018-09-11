@@ -18,7 +18,6 @@ def Register(request):
             profile.vendor = user
             profile.save()
 
-
             user.set_password(user.password)
             user.save()
             login(request, user)
@@ -33,4 +32,4 @@ def Register(request):
           'registration_form': registration_form
           }
 
-        return render(request, 'register.html', context)
+        return render(request, 'registration/register.html', context)

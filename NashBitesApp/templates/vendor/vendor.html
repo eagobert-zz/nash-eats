@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col vendor_info">
+
+    <!-- Begin add location form -->
+    <div class="col location_add">
+
+      {% block add_location %}
+        {% include 'vendor/add_location.html'%}
+      {% endblock %}
+
+    </div>
+
+    <!-- Begin location history list -->
+    <div class="col location_list">
+      {% block list_location %}
+        {% include 'vendor/list_location.html'%}
+      {% endblock %}
+    </div>
+  </div>
+
+  <!-- Placement of local map -->
+  <div class="col vendor-map">
+      {% block vendor_map %}
+
+      {% endblock %}
+  </div>
+
+</div>
+{% endblock content %}

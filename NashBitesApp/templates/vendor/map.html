@@ -1,0 +1,6 @@
+{% block vendor_map %}
+<form method='POST'>
+    {% csrf_token %}
+    {{ location_form.media }}
+</form>
+{% endblock %}
