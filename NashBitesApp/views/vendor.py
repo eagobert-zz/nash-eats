@@ -17,31 +17,35 @@ def Add_Location(request):
     """
     if request.method == 'GET':
         api_key = getattr(settings, 'GOOGLE_MAPS_API_KEY')
+        gmaps = googlemaps.Client(key=api_key)
         template_name = 'vendor/vendor.html'
         location_list = Location.objects.all()
         location_form = LocationForm()
+        address = location_form['address'].value()
+        lat = location_form['latitude'].value()
+        long = location_form['longitude'].value()
         context = {
             'location_form': location_form,
             'location_list': location_list,
             'api_key': api_key
         }
+        
+        # if lat and long is not None:
+        #     # reverse geocode to find address
+        #     reverse_geocode_result = gmaps.reverse_geocode((lat, long))
+        #     # save address to address field
+
+        #     # print results of reverse geocode
+        #     print(reverse_geocode_result)
+
         return render(request, template_name, context)
 
     elif request.method == 'POST':
         api_key = getattr(settings, 'GOOGLE_MAPS_API_KEY')
-        gmaps = googlemaps.Client(key=api_key)
         location_form = LocationForm(data=request.POST)
 
         if location_form.is_valid():
-            
             location = location_form.save(commit=False)
             location.vendor = request.user
             location.save()
-
-        # Need a function that:
-        #     if the marker is dragged to a position
-        #     onclick will generate coordinates
-        #     and place them into the location form
-        #     on save, the location will store in database
-
         return HttpResponseRedirect('/vendor/')

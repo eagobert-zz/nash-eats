@@ -7,6 +7,10 @@ var marker;
 var infowindow;
 var messagewindow;
 
+var address = document.getElementById('id_address')
+var latEl = document.getElementById('id_latitude')
+var longEl = document.getElementById('id_longitude')
+
 // Function initializes and adds the Nashville map w/ marker
 function initMap() {
 
@@ -24,15 +28,16 @@ function initMap() {
     draggable: true,
   });
 
-  // Event to get marker position on dragend
+  // Event to get marker position on dragend into form fields.  Geocoding occurs in vendor.py function
   google.maps.event.addListener(marker, 'dragend', function(evt){
     var lat, long, address;
     
     lat = marker.getPosition().lat();
     long = marker.getPosition().lng();
-    console.log("I am dragged!")
     console.log(lat, long)
     
+    latEl.value = lat;
+    longEl.value = long;
   })
 }
 
