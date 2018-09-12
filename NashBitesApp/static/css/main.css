@@ -1,0 +1,12 @@
+/* Main styles */
+
+html, body {
+  /* height: 100vh; */
+  margin: 0;
+  padding: 0;
+}
+
+/* Vendor.html styles */
+#vendor-map {
+  /* height: 100% */
+}

@@ -1,14 +1,19 @@
-from NashBitesApp.forms import LocationForm
-from NashBitesApp.models import Location
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.conf import settings
 
+from NashBitesApp.forms import LocationForm
+from NashBitesApp.models import Location
 
 
+@login_required
 def Add_Location(request):
-    """ View manages the GET, POST methods of the vendor page view """
+    """ 
+    View manages vendor dashboard view 
+    Methods:  GET, POST
+    """
     if request.method == 'GET':
         api_key = getattr(settings, 'GOOGLE_MAPS_API_KEY')
         template_name = 'vendor/vendor.html'
