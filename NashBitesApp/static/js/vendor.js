@@ -23,10 +23,16 @@ function initMap() {
     map: map,
     draggable: true,
   });
+
+  // Event to get marker position on dragend
+  google.maps.event.addListener(marker, 'dragend', function(evt){
+    var lat, long, address;
+    
+    lat = marker.getPosition().lat();
+    long = marker.getPosition().lng();
+    console.log("I am dragged!")
+    console.log(lat, long)
+    
+  })
 }
 
-// Need a function that:
-  // if the marker is dragged to a position
-  // onclick will generate coordinates
-  // and place them into the location form
-  // on save, the location will store in database

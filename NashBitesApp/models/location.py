@@ -6,16 +6,12 @@ class Location(models.Model):
     """ Model represents vendor location info """
     address = models.CharField(max_length=255)
 
-    latitude = models.DecimalField(
-        max_digits=10,
-        decimal_places=6,
+    latitude = models.FloatField(
         null=True,
         blank=True
     )
 
-    longitude = models.DecimalField(
-        max_digits=10,
-        decimal_places=6,
+    longitude = models.FloatField(
         null=True,
         blank=True
     )
