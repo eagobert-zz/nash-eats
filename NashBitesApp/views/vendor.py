@@ -1,4 +1,4 @@
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
@@ -8,7 +8,7 @@ from NashBitesApp.forms import LocationForm
 from NashBitesApp.models import Location
 
 
-@login_required
+# @login_required
 def Add_Location(request):
     """ 
     View manages vendor dashboard view 
