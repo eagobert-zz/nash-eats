@@ -1,3 +1,4 @@
+{% load staticfiles %}
 {% block add_location %}
 <h4>Add Location</h4>
 
@@ -5,6 +6,8 @@
   {% csrf_token %}
   {{ location_form.as_p }}
   <button type="submit">Add New Location</button>
+
+  {{location_form.media}}
 </form>
 
 {% endblock %}

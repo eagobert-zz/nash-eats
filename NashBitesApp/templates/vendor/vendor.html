@@ -1,12 +1,13 @@
 {% extends 'index.html' %}
 
+{% load staticfiles %}
 {% block content %}
 
 <div class="row">
   <div class="col vendor_info">
 
     <!-- Begin add location form -->
-    <div class="col location_add">
+    <div id="location_add" class="col">
 
       {% block add_location %}
         {% include 'vendor/add_location.html'%}
@@ -15,7 +16,7 @@
     </div>
 
     <!-- Begin location history list -->
-    <div class="col location_list">
+    <div id="location_list" class="col">
       {% block list_location %}
         {% include 'vendor/list_location.html'%}
       {% endblock %}
@@ -23,11 +24,13 @@
   </div>
 
   <!-- Placement of local map -->
-  <div class="col vendor-map">
-      {% block vendor_map %}
+  <div id="vendor-map" class="col">
 
-      {% endblock %}
   </div>
 
 </div>
 {% endblock content %}
+
+{% block script_maps %}
+<script src="{% static 'js/location_picker.js' %}"></script>
+{% endblock script_maps %}
