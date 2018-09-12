@@ -4,21 +4,20 @@ from django.db import models
 
 class Location(models.Model):
     """ Model represents vendor location info """
-    address = models.CharField(max_length=255)
+    address = models.CharField(
+        max_length=255,
+        null=True
+        )
 
-    latitude = models.DecimalField(
-        max_digits=9,
-        decimal_places=6,
+    latitude = models.FloatField(
         null=True,
         blank=True
-    )
+        )
 
-    longitude = models.DecimalField(
-        max_digits=9,
-        decimal_places=6,
+    longitude = models.FloatField(
         null=True,
         blank=True
-    )
+        )
 
     timestamp = models.DateTimeField(auto_now_add=True)
 
