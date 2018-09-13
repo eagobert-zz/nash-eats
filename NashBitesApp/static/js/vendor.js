@@ -19,7 +19,7 @@ function initMap() {
 
   // The map, centered at Nashville, TN
   map = new google.maps.Map(
-      document.getElementById('vendor-map'), {zoom: 10, center: nashville});
+      document.getElementById('vendor-map'), {zoom: 12, center: nashville});
 
   // The marker, positioned at Nashville, TN
   marker = new google.maps.Marker({

@@ -18,7 +18,7 @@ def Add_Location(request):
     if request.method == 'GET':
         api_key = getattr(settings, 'GOOGLE_MAPS_API_KEY')
         template_name = 'vendor/vendor.html'
-        location_list = Location.objects.all()
+        location_list = Location.objects.filter(vendor=request.user)
         location_form = LocationForm()
 
         context = {
