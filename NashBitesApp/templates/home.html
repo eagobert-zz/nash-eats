@@ -3,3 +3,11 @@
 {% block content %}
 <h3>"Hello, world. You're at the Nash Bites App user homepage view."</h3>
 {% endblock %}
+
+{% block script_google %}
+{#<script async defer src="https://maps.googleapis.com/maps/api/js?key={{api_key}}&callback=initMap"></script>#}
+{% endblock script_google %}
+
+{% block script_maps %}
+{#<script src="{% static 'js/vendor.js' %}"></script>#}
+{% endblock script_maps %}
