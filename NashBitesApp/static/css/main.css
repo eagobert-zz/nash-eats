@@ -1,4 +1,4 @@
-/* Main styles */
+/* Global Styles */
 
 html, body {
   /* height: 100vh; */
@@ -6,7 +6,10 @@ html, body {
   padding: 0;
 }
 
-/* Vendor.html styles */
-#vendor-map {
-  /* height: 100% */
+/* Vendor Page Styles */
+
+
+/* Welcome (Index) Page Styles */
+.welcome-modal {
+  background: purple;
 }

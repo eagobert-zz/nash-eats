@@ -22,7 +22,11 @@
   {% endblock navbar %}
 
   {% block content %}
-  <h2>You are at the Welcome Page</h2>
+
+    {% block modal %}
+      {% include 'welcome.html' %}
+    {% endblock modal %}
+    
   {% endblock %}
   
   {% block script_bootstrap %}
