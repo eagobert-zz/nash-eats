@@ -7,9 +7,16 @@ html, body {
 }
 
 /* Vendor Page Styles */
-
+#vendor-map {
+ 
+}
 
 /* Welcome (Index) Page Styles */
 .welcome-modal {
   background: purple;
+}
+
+/* Home Page Styles */
+#home-map {
+  height: 990px;
 }

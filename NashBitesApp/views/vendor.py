@@ -10,7 +10,7 @@ from NashBitesApp.models import Location
 
 
 @login_required
-def Add_Location(request):
+def VendorView(request):
     """ 
     View manages vendor dashboard view 
     Methods:  GET, POST

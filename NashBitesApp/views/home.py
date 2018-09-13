@@ -1,5 +1,18 @@
-from django.views.generic import TemplateView
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.conf import settings
+import googlemaps
 
 
-class HomeView(TemplateView):
-    template_name = 'home/home.html'
+def HomeView(request):
+    if request.method == 'GET':
+        api_key = getattr(settings, 'GOOGLE_MAPS_API_KEY')
+        template_name = 'home/home.html'
+        context = {
+            'api_key': api_key,
+        }
+        return render(request, template_name, context)
+
+    if request.method == 'POST':
+        return HttpResponseRedirect()
+   
