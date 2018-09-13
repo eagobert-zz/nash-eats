@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+{% load staticfiles %}
+
+
+
+{% block content %}
+
+<div class="row">
+  <div class="col vendor_info">
+
+    <!-- Begin add location form -->
+    <div id="location_add" class="col">
+
+      {% block add_location %}
+        {% include 'vendor/add_location.html'%}
+      {% endblock %}
+
+    </div>
+
+    <!-- Begin location history list -->
+    <div id="location_list" class="col">
+      {% block list_location %}
+        {% include 'vendor/list_location.html'%}
+      {% endblock %}
+    </div>
+  </div>
+
+  <!-- Placement of local map -->
+  <div id="vendor-map" class="col-7">
+
+  </div>
+
+</div>
+{% endblock content %}
+
+{% block script_maps %}
+<script src="{% static 'js/vendor.js' %}"></script>
+{% endblock script_maps %}

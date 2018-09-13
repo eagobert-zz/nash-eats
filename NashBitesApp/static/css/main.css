@@ -1,0 +1,15 @@
+/* Global Styles */
+
+html, body {
+  /* height: 100vh; */
+  margin: 0;
+  padding: 0;
+}
+
+/* Vendor Page Styles */
+
+
+/* Welcome (Index) Page Styles */
+.welcome-modal {
+  background: purple;
+}
