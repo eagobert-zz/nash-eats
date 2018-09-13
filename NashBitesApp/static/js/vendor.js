@@ -39,5 +39,6 @@ function initMap() {
     latEl.value = lat;
     longEl.value = long;
   })
+  
 }
 
