@@ -20,15 +20,22 @@ def Add_Location(request):
         gmaps = googlemaps.Client(key=api_key)
         template_name = 'vendor/vendor.html'
         location_list = Location.objects.all()
-        location_form = LocationForm()
-        address = location_form['address'].value()
-        lat = location_form['latitude'].value()
-        long = location_form['longitude'].value()
+        location_form = LocationForm(initial={
+            'latitude': 'None',
+            'longitude': 'None',
+        })
+        # address = location_form['address'].data
+        lat = location_form['latitude'].data
+        long = location_form['longitude'].data
+        print(location_form['latitude'].data)
         context = {
             'location_form': location_form,
             'location_list': location_list,
             'api_key': api_key
         }
+
+        if lat is not None:
+            print(lat, long)
         
         # if lat and long is not None:
         #     # reverse geocode to find address
