@@ -7,7 +7,7 @@ var marker;
 var infowindow;
 var messagewindow;
 
-var address = document.getElementById('id_address')
+var addressEl = document.getElementById('id_address')
 var latEl = document.getElementById('id_latitude')
 var longEl = document.getElementById('id_longitude')
 
@@ -36,9 +36,22 @@ function initMap() {
     long = marker.getPosition().lng();
     console.log(lat, long)
     
-    latEl.value = lat;
-    longEl.value = long;
+    // 
+    var geocoder = new google.maps.Geocoder();
+
+    geocoder.geocode({ latLng: marker.getPosition() }, function(result, status){
+      if('OK' === status){
+        console.log(result)
+        address = result[0].formatted_address;
+        addressEl.value = address
+        latEl.value = lat;
+        longEl.value = long;
+
+      } else { 
+        console.log('Geocode was not successful for the following reason: ' + status)
+      }
+
+    })
   })
-  
 }
 
