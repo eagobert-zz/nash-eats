@@ -1,0 +1,10 @@
+{% block searchbar %}
+
+<form action="{% url 'website:home' %}" class="" method="GET">
+ {% csrf_token %}
+  {{ search_form }}
+
+ {# <input id="search-input" name="search-input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">#}
+
+</form>
+{% endblock searchbar %}
