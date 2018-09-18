@@ -38,9 +38,14 @@ def HomeView(request):
                     print("{} = {}".format(k, v))
 
                     if k not in d2:
-                        print('vendor id is not in d2')
+                        d2 = destination
+                        # d2['vendor_id'] = destination['vendor_id']
+                        # d2['address'] = destination['address']
+                        # d2['timestamp'] = destination['timestamp']
+                        print(d2)
                     else:
-                        print('vendor id is in d2')
+                        d2.update(destination)
+                        print("d2(update): ", d2)
 
 
             # Get distance data from Google based on destination and origin
