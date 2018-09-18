@@ -24,16 +24,15 @@ def HomeView(request):
             # Get origin: Geocode data from search input
             geocode_result = gm.geocode(search_input)[0]
             origin = geocode_result['formatted_address']
-            print(origin)
             geocode_result_location = geocode_result['geometry']['location']
 
-            # Get destinations: create array of all vendor's most current timestamp location
+            # Get destinations: create query_result = list of dictionaries of all vendor's most current timestamp location
             query_results = Location.objects.values().order_by('-timestamp')
 
             seen = list()
             destinations = []
 
-            # Loop over the list of query_results
+            # Loop over query results
             for result in query_results:
 
                 # If value of vendor_id is not in empty list
@@ -42,10 +41,9 @@ def HomeView(request):
                     # append to destinations list
                     destinations.append(result['address'])
 
-                    # then append value of vendor_id to seen list
-                    # This results in having only the most current result for each vendor in destinations list
+                    # then append value of vendor_id to seen list that results in having only the most current result for each vendor in destinations list
                     seen.append(result['vendor_id'])
-            # print(destinations)
+
                 
         # Get distance data from Google based on destination and origin
         if destinations:
