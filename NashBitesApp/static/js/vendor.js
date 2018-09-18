@@ -48,7 +48,7 @@ function initMap() {
         longEl.value = long;
 
       } else { 
-        console.log('Geocode was not successful for the following reason: ' + status)
+        alert('Geocode was not successful for the following reason: ' + status)
       }
 
     })

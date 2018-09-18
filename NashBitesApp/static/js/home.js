@@ -7,12 +7,15 @@ var geocoder
 var marker; 
 var infowindow;
 var messagewindow;
+var originAddress;
+var destinationAddress;
+
 
 // Function initializes and adds the Nashville map w/o marker
 function initMap() {
 
   geocoder = new google.maps.Geocoder();
-  
+
   // The location of Nashville, TN
   const nashville = {lat: 36.174465, lng: -86.767960};
 
@@ -21,19 +24,25 @@ function initMap() {
       document.getElementById('home-map'), {zoom: 12, center: nashville});
   
     }
-    
+  
+  // Click handler function for encoding search input
   function codeAddress() {
+
       var address = document.getElementById('address').value;
       geocoder.geocode( { 'address': address}, function(results, status) {
+
     if (status == 'OK') {
-      console.log(results)
+
       map.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location
-      });
+      originAddress = results[0].formatted_address;
+      console.log("Origin: ", originAddress)
+
     } else {
+
       alert('Geocode was not successful for the following reason: ' + status);
+      
     }
   });
 }
+
+// Function to get destinations 
