@@ -37,10 +37,10 @@ def HomeView(request):
                 for k, v in destination.items():
                     print("{} = {}".format(k, v))
 
-                # if destination['vendor_id'] in d2:
-                #     print('vendor id is in d2')
-                # else:
-                #     print('vendor id is not in d2')
+                    if k not in d2:
+                        print('vendor id is not in d2')
+                    else:
+                        print('vendor id is in d2')
 
 
             # Get distance data from Google based on destination and origin
