@@ -14,20 +14,6 @@
       {% block list_trucks %}
         {#{% include 'home/list_trucks.html'%}#}
       {% endblock %}
-      <h5>Search_Input: {{search_input}}</h5>
-      <h5>Origin: {{origin}}</h5>
-      <h5>Origin Location: {{origin_location}}</h5>
-
-      {% for destination in destinations %}
-      <h5>
-        Vendor Id: {{destination.vendor_id}} 
-        Address: {{destination.address}} 
-        Timestamp: {{destination.timestamp}} 
-        Latitude: {{destination.latitude}}
-        Longitude: {{destination.longitude}}
-        <!-- Latitude: {{destination.latitude}} Longitude: {{destination.longitude}} -->
-      </h5>
-      {% endfor %}
 
     </div>
 

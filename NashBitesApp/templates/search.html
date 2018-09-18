@@ -2,10 +2,8 @@
 
 <form action="{% url 'website:home' %}" class="" method="GET">
  {% csrf_token %}
-
- {{search}}
-<input id="search-input" name="search-input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-
+  <input id="address" name="search-input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" value="">
+  <input type="button" value="Encode" onclick="codeAddress()">
 </form>
 
 {% endblock searchbar %}
