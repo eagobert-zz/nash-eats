@@ -19,13 +19,16 @@
       <h5>Origin Location: {{origin_location}}</h5>
 
       {% for destination in destinations %}
-      <h5>Vendor Id: {{destination.vendor_id}} Address: {{destination.address}} Timestamp: {{destination.timestamp}}</h5>
+      <h5>
+        Vendor Id: {{destination.vendor_id}} 
+        Address: {{destination.address}} 
+        Timestamp: {{destination.timestamp}} 
+        Latitude: {{destination.latitude}}
+        Longitude: {{destination.longitude}}
+        <!-- Latitude: {{destination.latitude}} Longitude: {{destination.longitude}} -->
+      </h5>
       {% endfor %}
 
-      <!-- {% for key, values in destinations.items %}
-      <h5>{{key}}}: {{value}}</h5>
-      {% endfor %} -->
-      <!-- <h5>Time: {{time}}</h5> -->
     </div>
 
 
