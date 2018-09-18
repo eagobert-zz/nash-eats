@@ -27,15 +27,21 @@ def HomeView(request):
             geocode_result_location = geocode_result['geometry']['location']
 
             # Get destinations: create array of all vendor's most current location
+            destinations = list(Location.objects.values().order_by('-timestamp'))
+            # print(destinations)
 
-            # q1 = Location.objects.all()
-            # destinations = q1.values('vendor_id').annotate(timestamp=Max('timestamp'))
+            d2 = dict()
 
-            destinations = (Location.objects.values().order_by('-timestamp'))
-
-            # Query over the dictionary 'q1'
+            # Loop over the list of dictionaries
             for destination in destinations:
-                print(destination)
+                for k, v in destination.items():
+                    print("{} = {}".format(k, v))
+
+                # if destination['vendor_id'] in d2:
+                #     print('vendor id is in d2')
+                # else:
+                #     print('vendor id is not in d2')
+
 
             # Get distance data from Google based on destination and origin
 
