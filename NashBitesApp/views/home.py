@@ -27,26 +27,19 @@ def HomeView(request):
             geocode_result_location = geocode_result['geometry']['location']
 
             # Get destinations: create array of all vendor's most current location
-            destinations = list(Location.objects.values().order_by('-timestamp'))
-            # print(destinations)
+            destinations = Location.objects.values().order_by('-timestamp')
 
-            d2 = dict()
+            
+            seen = list()
+            keep = []
 
             # Loop over the list of dictionaries
             for destination in destinations:
-                for k, v in destination.items():
-                    print("{} = {}".format(k, v))
-
-                    if k not in d2:
-                        d2 = destination
-                        # d2['vendor_id'] = destination['vendor_id']
-                        # d2['address'] = destination['address']
-                        # d2['timestamp'] = destination['timestamp']
-                        print(d2)
-                    else:
-                        d2.update(destination)
-                        print("d2(update): ", d2)
-
+                if destination['vendor_id'] not in seen:
+                    keep.append(destination)
+                    seen.append(destination['vendor_id'])
+                    print(keep)
+                
 
             # Get distance data from Google based on destination and origin
 
@@ -60,7 +53,7 @@ def HomeView(request):
             'search_input': search_input,
             'origin': geocode_result_origin,
             'origin_location': geocode_result_location,
-            'destinations': destinations,
+            'destinations': keep,
         }
         return render(request, template_name, context)
 
