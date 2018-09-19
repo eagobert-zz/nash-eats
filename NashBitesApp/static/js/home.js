@@ -53,14 +53,39 @@ fetch('/location/')
     return response.json()
 })
 .then(data => {
-  // Sort data by timestamp
+
+  // Sort data by timestamp in descending order
   data_sort = data.sort(function(a, b){
+
     var timeA = new Date(b.timestamp).getTime();
     var timeB = new Date(a.timestamp).getTime();
     return timeA > timeB ? 1 : -1;
   })
 
-    console.log("Sort Results: ", data_sort)
+  console.log("Sort Results: ", data_sort)
+  return data_sort
+})
+.then(data_sort => {
+  
+  var seen = [];
+  var keep = [];
+  
+  // Loop thru sorted data
+  for (var i = 0; i < data_sort.length; i++){
+
+
+    //If data is not in the array named "seen"
+    if(!seen.includes(data_sort[i].vendor_id)){
+
+      // Add current address to the 'keep' array
+      keep.push(data_sort[i].address);
+
+      // Add vendor id to the seen array
+      seen.push(data_sort[i].vendor_id);
+    }
+  }
+  console.log("keep: ", keep)
+  console.log("seen: ", seen)
 })
 
 
