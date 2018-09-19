@@ -4,11 +4,7 @@
 // Declare global variables
 var map;
 var geocoder
-var marker; 
-var infowindow;
-var messagewindow;
 var originAddress;
-var destinationAddress;
 
 
 // Function initializes and adds the Nashville map w/o marker
@@ -23,7 +19,9 @@ function initMap() {
   map = new google.maps.Map(
       document.getElementById('home-map'), {zoom: 12, center: nashville});
   
-    }
+  // setMarkers(map)
+
+}
   
   // Click handler function for encoding search input
   function codeAddress() {
@@ -38,9 +36,7 @@ function initMap() {
       console.log("Origin: ", originAddress)
 
     } else {
-
       alert('Geocode was not successful for the following reason: ' + status);
-
     }
   });
 }
@@ -76,11 +72,11 @@ fetch('/location/')
     if(!seen.includes(data_sort[i].vendor_id)){
 
       // Add current address to the 'keep' array
-      destinations.push({
-        'address': data_sort[i].address,
-        'latitude': data_sort[i].latitude,
-        'longitude': data_sort[i].longitude
-      });
+      destinations.push([ 
+        data_sort[i].address,
+        data_sort[i].latitude,
+        data_sort[i].longitude
+      ]);
 
       // Add vendor id to the seen array
       seen.push(data_sort[i].vendor_id);
@@ -92,9 +88,18 @@ fetch('/location/')
 })
 .then(destinations => {
 
+
   // Loop thru destinations and add marker to google map
+  for (var i = 0; i < destinations.length; i++){
+    var destination = destinations[i];
+    var marker = new google.maps.Marker({
+      position: {lat: destination[1], lng: destination[2]},
+      map: map,
+      title: destination[0]
 
-
+    })
+    marker.setMap(map);
+  }
 })
 
 
