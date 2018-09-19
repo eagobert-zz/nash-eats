@@ -12,7 +12,7 @@ urlpatterns = [
 
   path('', views.Welcome, name='welcome'),
   path('register/', views.Register, name='register'),
-  path('home/', views.HomeView.as_view() ,name='home'),
-  path('vendor/', views.Add_Location, name='location-add'),
-  # path('vendor/', views.List_Location, name='location-list'),
+  path('home/', views.HomeView ,name='home'),
+  path('vendor/', views.VendorView, name='vendor'),
+  path('location/', views.Location_List, name='locations'),
 ]

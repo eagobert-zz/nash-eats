@@ -1,14 +1,16 @@
 from django.shortcuts import render
-from django.views.generic import View
 from django.contrib.auth.models import User
+from NashBitesApp.forms import SearchForm
 
 
-class NavView(View):
-    template_name = 'navbar.html'
-
-    def get(self, request, *args, **kwargs):
+def NavView(request):
+  if request.method == 'GET':
+      template_name = 'navbar.html'
+      search_form = SearchForm()
       user = request.user
       context = {
-        'user': user
+        'user': user,
+        'search_form': search_form,
       }
-      return render(request, 'navbar.html', context)
+      return render(request, template_name, context)
+  
