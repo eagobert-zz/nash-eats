@@ -6,6 +6,48 @@ html, body {
   padding: 0;
 }
 
+  /* NavBar*/
+  .navbar {
+    background-color: #FFFFFF;
+    /* width: 1440px; */
+    height: 119px;
+  }
+
+  .navbar-brand {
+    color: #47525E;
+    font-family: Lato;
+    font-size: 74px;
+    font-weight: 400;
+    line-height: 55px;
+    width: 402px;
+    text-align: left;
+  }
+
+  #btn-login {
+    background-color: #90BECB;
+    border: 2px solid #47525E;
+    border-radius: 5px;
+    width: 203.19px;
+    height: 53px;
+  }
+
+  .btn-text {
+    position: relative;
+    bottom: 12px;
+    color: #47525E;
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 62px;
+    width: 203.19px;
+    text-align: center;
+  }
+
+  .btn-img {
+    width: 36px;
+    height: 36px;
+  }
+
 /* Vendor Page Styles */
 #vendor-map {
  
