@@ -66,7 +66,7 @@ fetch('/location/')
 .then(data_sort => {
   
   var seen = [];
-  var destinationAddress = [];
+  var destinations = [];
 
   // Loop thru sorted data
   for (var i = 0; i < data_sort.length; i++){
@@ -76,14 +76,25 @@ fetch('/location/')
     if(!seen.includes(data_sort[i].vendor_id)){
 
       // Add current address to the 'keep' array
-      destinationAddress.push(data_sort[i].address);
+      destinations.push({
+        'address': data_sort[i].address,
+        'latitude': data_sort[i].latitude,
+        'longitude': data_sort[i].longitude
+      });
 
       // Add vendor id to the seen array
       seen.push(data_sort[i].vendor_id);
-      
+
     }
   }
-  return destinationAddress;
+  console.log(destinations)
+  return destinations;
+})
+.then(destinations => {
+
+  // Loop thru destinations and add marker to google map
+
+
 })
 
 
