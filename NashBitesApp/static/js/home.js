@@ -28,8 +28,8 @@ function initMap() {
   // Click handler function for encoding search input
   function codeAddress() {
 
-      var address = document.getElementById('address').value;
-      geocoder.geocode( { 'address': address}, function(results, status) {
+    var address = document.getElementById('address').value;
+    geocoder.geocode( { 'address': address}, function(results, status) {
 
     if (status == 'OK') {
 
@@ -40,9 +40,20 @@ function initMap() {
     } else {
 
       alert('Geocode was not successful for the following reason: ' + status);
-      
+
     }
   });
 }
 
-// Function to get destinations 
+// Fetch location_list view which returns Location data
+fetch('/location/')
+
+// Then take the returned data and convert to JSON
+.then(response => {
+    return response.json()
+})
+.then(data => {
+    console.log(data)
+})
+
+
