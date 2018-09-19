@@ -53,7 +53,14 @@ fetch('/location/')
     return response.json()
 })
 .then(data => {
-    console.log(data)
+  // Sort data by timestamp
+  data_sort = data.sort(function(a, b){
+    var timeA = new Date(b.timestamp).getTime();
+    var timeB = new Date(a.timestamp).getTime();
+    return timeA > timeB ? 1 : -1;
+  })
+
+    console.log("Sort Results: ", data_sort)
 })
 
 
