@@ -1,16 +1,21 @@
 {% load staticfiles %}
 
-{% block modal %}
-<div class="container welcome-modal">
-<h4>Welcome to NashEats!</h4>
-{% lorem 1 p %}
+<div class="background-welcome">
 
-<h5>Enter Here</h5>
-<a href="{% url 'website:home'%}">
-  <i class="fas fa-check-circle fa-3x"></i>
-</a>
-
-
+  {% block modal %}
+  <div class="container welcome-modal">
+    <h4>Welcome to NashEats!</h4>
+    
+    {% lorem 1 p %}
+  
+    <h5>Enter Here</h5>
+    <a href="{% url 'website:home'%}">
+      <i class="fas fa-check-circle fa-3x"></i>
+    </a>
+  
+  
+  
+  </div>
+  {% endblock modal %}
 
 </div>
-{% endblock modal %}

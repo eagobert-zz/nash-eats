@@ -1,9 +1,8 @@
 /* Global Styles */
 
 html, body {
-  /* height: 100vh; */
-  margin: 0;
-  padding: 0;
+  width: auto;
+  height: 1026px;
 }
 
   /* NavBar*/
@@ -54,6 +53,12 @@ html, body {
 }
 
 /* Welcome (Index) Page Styles */
+.background-welcome {
+  background-image: url("../images/background-donuts.jpeg");
+  width: auto;
+  height: 1026px;
+}
+
 .welcome-modal {
   background: purple;
 }
