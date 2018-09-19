@@ -127,6 +127,44 @@ html, body {
   padding: 10px;
 }
 
+/* Register Page Styles */
+.modal-subtitle {
+  color: #47525E;
+  font-family: Lato;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 51px;
+  width: 538px;
+  text-align: center;
+}
+
+.register-content {
+  color: #8190A5;
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  width: 330.87px;
+  text-align: center;
+}
+
+#id_company_name,
+#id_username,
+#id_password {
+  background-color: #FFFFFF;
+  border: 1px solid #8492A6;
+  border-radius: 5px;
+  width: 257.34px;
+  height: 44.83px;
+}
+
+.btn-signup {
+  background-color: #47525E;
+  border-radius: 5px;
+  width: 258.02px;
+  height: 44.83px;
+}
+
 /* Home Page Styles */
 #home-map {
   height: 990px;

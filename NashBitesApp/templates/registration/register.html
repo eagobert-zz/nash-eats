@@ -7,14 +7,16 @@
 <div class="background-register">
   <div class="container register-modal">
       <h4 class="modal-title">Welcome to NashEats!</h4>
+      <h5 class="modal-subtitle">Sign Up</h5>
+      <p class="register-content">Aw, c'mon Rick. That doesn't seem so bad. It's been six hours. Dreams move one...</p>
 
-    <form method="post">
+    <form action="" method="post">
 
       {% csrf_token %}
       {{ registration_form.as_p }}
       {{ user_form.as_p }}
 
-      <button type="submit">Sign Up</button>
+      <button class="btn-signup" type="submit">Sign Up</button>
 
     </form>
 
