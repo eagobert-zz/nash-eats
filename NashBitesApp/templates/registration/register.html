@@ -1,15 +1,24 @@
 {% extends 'index.html' %}
 
+{% load staticfiles %}
+
+
 {% block content %}
+<div class="background-register">
+  <div class="container register-modal">
+      <h4 class="modal-title">Welcome to NashEats!</h4>
 
-<form method="post">
+    <form method="post">
 
-  {% csrf_token %}
-  {{ registration_form.as_p }}
-  {{ user_form.as_p }}
+      {% csrf_token %}
+      {{ registration_form.as_p }}
+      {{ user_form.as_p }}
 
-  <button type="submit">Sign Up</button>
+      <button type="submit">Sign Up</button>
 
-</form>
+    </form>
 
+  </div>
+
+</div>
 {% endblock %}

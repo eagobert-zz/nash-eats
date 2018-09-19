@@ -53,13 +53,15 @@ html, body {
 }
 
 /* Welcome (Index) Page Styles */
-.background-welcome {
+.background-welcome,
+.background-register {
   background-image: url("../images/background-donuts.jpeg");
   width: auto;
   height: 1026px;
 }
 
-.welcome-modal {
+.welcome-modal,
+.register-modal {
   position: relative;
   top: 115px;
   bottom: 186px;
@@ -101,7 +103,7 @@ html, body {
 
 .modal-enter {
   position: relative;
-  top: 200px;
+  top: 190px;
   left: 230px;
   right: 278px;
   color: #47525E;
@@ -111,6 +113,20 @@ html, body {
   line-height: 40px;
   text-align: left;
 }
+
+.modal-link img{
+  position: relative;
+  color: white;
+  top: 210px;
+  left: 260px;
+  background-color: #47525E;
+  border: 2px solid #47525E;
+  border-radius: 100%;
+  width: 73px;
+  height: 73px;
+  padding: 10px;
+}
+
 /* Home Page Styles */
 #home-map {
   height: 990px;
