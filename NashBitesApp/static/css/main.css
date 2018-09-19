@@ -54,14 +54,16 @@ html, body {
 
 /* Welcome (Index) Page Styles */
 .background-welcome,
-.background-register {
+.background-register,
+.background-login {
   background-image: url("../images/background-donuts.jpeg");
   width: auto;
   height: 1026px;
 }
 
 .welcome-modal,
-.register-modal {
+.register-modal,
+.login-modal {
   position: relative;
   top: 115px;
   bottom: 186px;
@@ -127,7 +129,7 @@ html, body {
   padding: 10px;
 }
 
-/* Register Page Styles */
+/* Register & Login Page Styles */
 .modal-subtitle {
   color: #47525E;
   font-family: Lato;
@@ -139,7 +141,7 @@ html, body {
 }
 
 .register-content {
-  color: #8190A5;
+  color:  #FFFFFF;
   font-family: Lato;
   font-size: 18px;
   font-weight: 400;
@@ -157,7 +159,8 @@ html, body {
   height: 44.83px;
 }
 
-.btn-signup {
+.btn-signup,
+.btn-signin {
   font-family: Lato;
   background-color: #47525E;
   border-color: #47525E;
@@ -169,7 +172,8 @@ html, body {
   text-align: center;
 }
 
-.link-to-home {
+.link-to-home,
+.link-to-register {
   color: #FFFFFF;
   font-family: Lato;
   font-size: 26px;
@@ -179,19 +183,22 @@ html, body {
   text-decoration: underline;
 }
 
-.register-box-1 {
+.register-box-1,
+.login-box-1 {
   position: relative;
   top: 65px;
   left: 60px;
   width: 600px;
 }
 
-.form-register {
+.form-register,
+.form-login {
   position: relative;
   top: 75px;
   left: 215px;
 }
-.register-box-2 {
+.register-box-2,
+.login-box-2 {
   position: relative;
   top: 100px;
   left: 180px;

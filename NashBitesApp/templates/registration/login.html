@@ -1,14 +1,29 @@
 {% extends 'index.html' %}
 
 {% block content%}
+<div class="background-login">
+  <div class="container login-modal">
+      <h4 class="modal-title">Welcome to NashEats!</h4>
+      <div class="login-box-1">
+          <h5 class="modal-subtitle">Sign In</h5>
+          <p class="register-content">Aw, c'mon Rick. That doesn't seem so bad. It's been six hours. Dreams move one...</p>
+      </div>
 
-<h2>Login</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Sign In</button>
-</form>
+      <div class="form-login">
+        <form method="post">
+          {% csrf_token %}
+          {{ login_form.as_p }}
+          <button class="btn-signin" type="submit">Sign In</button>
+        </form>
+      </div>
+      <div class="login-box-2">
+          <a href="{% url 'website:home'%}"><h5 class="link-to-home">Not a vendor? Click here!</h5></a>
 
-<!-- Add registration link below -->
-<p><a href='{% url 'website:register' %}'>Need to Register? Click here!</a></p>
+          <a href="{% url 'website:register' %}"><h5 class="link-to-register">Need to Register? Click here!</h5></a>
+      </div>
+
+  </div>
+</div>
+
+
 {% endblock %}
