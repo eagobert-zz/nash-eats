@@ -2,7 +2,7 @@
 
 html, body {
   width: auto;
-  height: 1026px;
+  height: auto;
 }
 
   /* NavBar*/
@@ -60,9 +60,57 @@ html, body {
 }
 
 .welcome-modal {
-  background: purple;
+  position: relative;
+  top: 115px;
+  bottom: 186px;
+  background-color: #90BECB;
+  border-radius: 38px;
+  opacity: 0.85;
+  width: 706px;
+  height: 647px;
 }
 
+.modal-title {
+  position: relative;
+  top: 45px;
+  left: 70px;
+  right: 88px;
+  color: #FFFFFF;
+  font-family: Lato;
+  font-size: 55px;
+  font-weight: 400;
+  line-height: 71px;
+  text-align: left;
+}
+
+.modal-content {
+  position: relative;
+  top: 130px;
+  left: 10px;
+  right: 18px;
+  color: #FFFFFF;
+  background-color: #90BECB;
+  border: none;
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  width: 669px;
+  text-align: left;
+}
+
+.modal-enter {
+  position: relative;
+  top: 200px;
+  left: 230px;
+  right: 278px;
+  color: #47525E;
+  font-family: Lato;
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 40px;
+  text-align: left;
+}
 /* Home Page Styles */
 #home-map {
   height: 990px;
