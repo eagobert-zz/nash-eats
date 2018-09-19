@@ -144,7 +144,6 @@ html, body {
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
-  width: 330.87px;
   text-align: center;
 }
 
@@ -159,10 +158,43 @@ html, body {
 }
 
 .btn-signup {
+  font-family: Lato;
   background-color: #47525E;
+  border-color: #47525E;
   border-radius: 5px;
   width: 258.02px;
   height: 44.83px;
+  color: #FFFFFF;
+  font-size: 18px;
+  text-align: center;
+}
+
+.link-to-home {
+  color: #FFFFFF;
+  font-family: Lato;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 33px;
+  text-align: left;
+  text-decoration: underline;
+}
+
+.register-box-1 {
+  position: relative;
+  top: 65px;
+  left: 60px;
+  width: 600px;
+}
+
+.form-register {
+  position: relative;
+  top: 75px;
+  left: 215px;
+}
+.register-box-2 {
+  position: relative;
+  top: 100px;
+  left: 180px;
 }
 
 /* Home Page Styles */

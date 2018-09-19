@@ -7,18 +7,25 @@
 <div class="background-register">
   <div class="container register-modal">
       <h4 class="modal-title">Welcome to NashEats!</h4>
-      <h5 class="modal-subtitle">Sign Up</h5>
-      <p class="register-content">Aw, c'mon Rick. That doesn't seem so bad. It's been six hours. Dreams move one...</p>
 
-    <form action="" method="post">
+      <div class="register-box-1">
+        <h5 class="modal-subtitle">Sign Up</h5>
+        <p class="register-content">Aw, c'mon Rick. That doesn't seem so bad. It's been six hours. Dreams move one...</p>
+      </div>
 
-      {% csrf_token %}
-      {{ registration_form.as_p }}
-      {{ user_form.as_p }}
+    <div class="form-register">
+      <form action="" method="post">
+  
+        {% csrf_token %}
+        {{ registration_form.as_p }}
+        {{ user_form.as_p }}
+        <button class="btn-signup" type="submit">Sign Up</button>
+      </form>
+    </div>
 
-      <button class="btn-signup" type="submit">Sign Up</button>
-
-    </form>
+    <div class="register-box-2">
+      <a href="{% url 'website:home'%}"><h5 class="link-to-home">Not a vendor? Click here!</h5></a>
+    </div>
 
   </div>
 
