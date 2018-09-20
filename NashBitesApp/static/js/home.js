@@ -26,7 +26,7 @@ function initMap() {
   // Click handler function for encoding search input
   function codeAddress() {
 
-    var address = document.getElementById('id_search_input').value;
+    var address = document.getElementById('address').value;
     geocoder.geocode( { 'address': address}, function(results, status) {
 
     if (status == 'OK') {
