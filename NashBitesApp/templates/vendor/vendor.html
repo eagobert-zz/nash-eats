@@ -10,13 +10,25 @@
   <div id="vendor-info" class="col">
 
     <!-- Begin add location form -->
-    <div id="location-add" class="col">
 
       {% block add_location %}
-        {% include 'vendor/add_location.html'%}
+
+        <div class="bar-top">
+  
+            <h4 class="vendor-title">Add Location</h4>
+          
+          </div>
+          
+          <div class="form-add-location">
+            <form method='POST'>
+              {% csrf_token %}
+              {{ location_form.as_p }}
+              <button class="btn-add-location" type="submit">Add New Location</button>
+            </form>
+          </div>
       {% endblock %}
 
-    </div>
+
 
     <!-- Begin location history list -->
     <div id="location-list" class="col">
