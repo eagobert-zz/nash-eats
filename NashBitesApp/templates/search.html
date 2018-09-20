@@ -1,10 +1,10 @@
 {% block searchbar %}
 
-<form action="{% url 'website:home' %}" class="" method="GET">
+<form class="form-inline" action="{% url 'website:home' %}" class="" method="GET">
  {% csrf_token %}
  <!-- {{search_form}} -->
-  <input id="address" name="search-input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" value="">
-  <input type="button" value="Encode" onclick="codeAddress()">
+  <input id="address" name="search-input" class="form-control mr-sm-2" type="search" placeholder="Search food trucks here. . ." aria-label="Search" value="">
+  <input class="btn btn-info" type="submit" value="Search" onclick="codeAddress()">
 </form>
 
 {% endblock searchbar %}
