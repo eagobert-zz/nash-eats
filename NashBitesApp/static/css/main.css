@@ -16,7 +16,6 @@ html, body {
 
   .navbar {
     background-color: #FFFFFF;
-    /* width: 1440px; */
     height: 119px;
   }
 
@@ -32,7 +31,6 @@ html, body {
 
   .navbar-brand span {
     font-family: 'Pacifico', cursive;
-    /* color: #90BECB; */
     color: #BB184B
   }
 
@@ -69,7 +67,7 @@ html, body {
 .background-login {
   background-image: url("../images/background-donuts.jpeg");
   width: auto;
-  height: 1026px;
+  height: 1150px;
 }
 
 .welcome-modal,
@@ -220,7 +218,7 @@ html, body {
 #home-map,
 #vendor-map {
   width: 820px;
-  height: 1026px;
+  height: 1150px;
 }
 
 #truck_list {
@@ -235,7 +233,7 @@ html, body {
   background-repeat: no-repeat;
   background-size: cover;
   width: 621px;
-  height: 1026px;
+  height: 1150px;
 }
 
 .vendor-title {
@@ -248,10 +246,19 @@ html, body {
 }
 
 .form-add-location {
+  position: relative;
+  top: 80px;
+  left: 100px;
   background-color: #FFFFFF;
   border-radius: 10px;
-  width: 600px;
+  width: 800px;
   height: 300px;
+}
+
+.form-add-location form {
+  position: relative;
+  top: 30px;
+  left: 200px;
 }
 
 #id_address,
@@ -260,13 +267,39 @@ html, body {
   background-color: #FFFFFF;
   border: 1px solid #8492A6;
   border-radius: 5px;
-  width: 265px;
+  width: 400px;
   height: 50px;
 }
 
+.btn-add-location {
+  width: 400px;
+}
+
 .list-of-locations {
+  position: relative;
+  top: 190px;
+  left: 100px;
   background-color: #FFFFFF;
   border-radius: 10px;
-  width: 600px;
+  width: 800px;
   height: 600px;
+}
+
+.bar-top {
+  position: relative;
+  top: 50px;
+}
+
+.bar-bottom {
+  position: relative;
+  top: 140px;
+}
+
+.bar-top h4,
+.bar-bottom h4 {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  margin-left: 200px;
+  margin-right: 200px;
+  border-bottom: 5px solid #BB184B;
 }
