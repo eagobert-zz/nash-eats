@@ -1,11 +1,18 @@
-{% load staticfiles %}
-{% block add_location %}
-<h4>Add Location</h4>
 
-<form method='POST'>
-  {% csrf_token %}
-  {{ location_form.as_p }}
-  <button type="submit">Add New Location</button>
-</form>
+
+{% block add_location %}
+<div class="bar-top">
+  
+  <h4 class="vendor-title">Add Location</h4>
+
+</div>
+
+<div class="form-add-location">
+  <form method='POST'>
+    {% csrf_token %}
+    {{ location_form.as_p }}
+    <button class="btn-add-location" type="submit">Add New Location</button>
+  </form>
+</div>
 
 {% endblock %}

@@ -11,3 +11,13 @@ class LocationForm(forms.ModelForm):
             'latitude',
             'longitude'
         ]
+        labels = {
+            'address': '',
+            'latitude': '',
+            'longitude': '',
+        }
+        widgets = {
+            'address': forms.TextInput(attrs={'placeholder': 'Enter an address. . .'}),
+            'latitude': forms.NumberInput(attrs={'placeholder': 'Auto generated latitude. . .'}),
+            'longitude': forms.NumberInput(attrs={'placeholder': 'Auto generated longitude. . .'}),
+        }

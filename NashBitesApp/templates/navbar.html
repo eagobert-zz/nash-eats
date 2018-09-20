@@ -1,5 +1,6 @@
+{% load staticfiles %}
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand">NASHEats</a>
+  <a class="navbar-brand"><span>Nash</span>Eats</a>
 
   {% if not user.is_authenticated %}
 
@@ -8,17 +9,19 @@
   {% endblock searchbar %}
 
   <div>
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="{% url 'login' %}">Vendor Login</a></button>
+    <button id="btn-login" class="btn btn-outline-success my-2 my-sm-0" type="submit">
+      <a class="btn-text" href="{% url 'website:login' %}"><img class="btn-img" src="{% static 'images/key.png' %}" alt=""> Login</a>
+    </button>
   </div>
   
   {% endif %}
 
-  <!-- This is working -->
+
   {% if user.is_authenticated %}
 
   <div>
-    {# <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="{% url 'profile' %}">Vendor Profile</a></button> #}
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="{% url 'logout' %}">Logout</a></button>
+    {# <button id="btn-profile" class="btn btn-outline-success my-2 my-sm-0" type="submit"><a class="btn-text" href="{% url 'profile' %}">Vendor Profile</a></button> #}
+    <button id="btn-logout" class="btn btn-outline-success my-2 my-sm-0" type="submit"><a class="btn-text" href="{% url 'logout' %}">Logout</a></button>
   </div>
 
   {% endif %}

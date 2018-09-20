@@ -1,16 +1,23 @@
 {% load staticfiles %}
 
-{% block modal %}
-<div class="container welcome-modal">
-<h4>Welcome to NashEats!</h4>
-{% lorem 1 p %}
+<div class="background-welcome">
 
-<h5>Enter Here</h5>
-<a href="{% url 'website:home'%}">
-  <i class="fas fa-check-circle fa-3x"></i>
-</a>
+  {% block modal %}
+  <div class="container welcome-modal">
+    <h4 class="modal-title">Welcome to NashEats!</h4>
+
+    <p class="modal-content">Aw, c'mon Rick. That doesn't seem so bad. It's been six hours. Dreams move one... one-hundredth the speed of reality, and dog time is one-seventh human time. So y'know, every day here is like a minute. It's like Inception, Morty, so if it's confusing and stupid, then so is everyone's favorite movie. Hmmm, human music. You're growing up fast, Morty. You're going into a great big thorn straight into my ass. </p>
 
 
+  
+    <h5 class="modal-enter">Enter Here</h5>
+    <a class="modal-link" href="{% url 'website:home'%}">
+      <img class="" src="{% static 'images/checkmark.png' %}" alt="">
+    </a>
+  
+  
+  
+  </div>
+  {% endblock modal %}
 
 </div>
-{% endblock modal %}

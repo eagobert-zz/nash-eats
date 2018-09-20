@@ -1,18 +1,22 @@
 {% block list_location %}
+<div class="bar-bottom">
+  <h4 class="vendor-title">Location History</h4>
+</div>
 
-<h4>Location History</h4>
-
-<ul>
-{% for location in location_list %}
-
-  <li>{{ location.address }}</li>
-
-{% empty%}
+<div class="list-of-locations">
+  <ol>
+  {% for location in location_list %}
   
-  <h5>Sorry, no location history is available.</h5>
+    <li>{{ location.address }}</li>
   
-  {% endfor %}
+  {% empty%}
+    
+    <h5>Sorry, no location history is available.</h5>
+    
+    {% endfor %}
+  
+  </ol>
 
-</ul>
+</div>
 
 {% endblock %}
