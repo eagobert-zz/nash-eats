@@ -4,7 +4,7 @@ from django import forms
 
 class UserForm(forms.ModelForm):
   password = forms.CharField(
-    label="", 
+    label="", widget=forms.TextInput(attrs={'type': 'password'})
   )
 
   class Meta:

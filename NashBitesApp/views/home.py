@@ -6,7 +6,7 @@ from django.conf import settings
 from django import forms
 import googlemaps
 from django.db.models import Max
-from NashBitesApp.forms import LocationForm
+from NashBitesApp.forms import SearchForm
 
 
 
@@ -17,7 +17,7 @@ def HomeView(request):
     """
     if request.method == 'GET':
         # search_input = request.GET.get('search-input', None)
-        # search_form = SearchForm()
+        search_form = SearchForm()
         api_key = getattr(settings, 'GOOGLE_MAPS_API_KEY')
         template_name = 'home/home.html'
         # gm = googlemaps.Client(key=api_key)
@@ -57,7 +57,7 @@ def HomeView(request):
 
         context = {
             'api_key': api_key,
-            # 'search_form': search_form,
+            'search_form': search_form,
             # 'search_input': search_input,
         }
         return render(request, template_name, context)

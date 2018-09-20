@@ -206,5 +206,14 @@ html, body {
 
 /* Home Page Styles */
 #home-map {
-  height: 990px;
+  width: 820px;
+  height: 1026px;
+}
+
+#truck_list {
+  background-image: url("../images/background-donuts-home.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 621px;
+  height: 1026px;
 }
