@@ -6,6 +6,14 @@ html, body {
 }
 
   /* NavBar*/
+  #address {
+    background-color: #FFFFFF;
+    border: 1px solid #8492A6;
+    border-radius: 5px;
+    width: 620px;
+    height: 68px;
+  }
+
   .navbar {
     background-color: #FFFFFF;
     /* width: 1440px; */
@@ -22,7 +30,15 @@ html, body {
     text-align: left;
   }
 
-  #btn-login {
+  .navbar-brand span {
+    font-family: 'Pacifico', cursive;
+    /* color: #90BECB; */
+    color: #BB184B
+  }
+
+  #btn-login,
+  #btn-logout,
+  #btn-profile {
     background-color: #90BECB;
     border: 2px solid #47525E;
     border-radius: 5px;
@@ -46,11 +62,6 @@ html, body {
     width: 36px;
     height: 36px;
   }
-
-/* Vendor Page Styles */
-#vendor-map {
- 
-}
 
 /* Welcome (Index) Page Styles */
 .background-welcome,
@@ -160,7 +171,8 @@ html, body {
 }
 
 .btn-signup,
-.btn-signin {
+.btn-signin,
+.btn-add-location {
   font-family: Lato;
   background-color: #47525E;
   border-color: #47525E;
@@ -204,16 +216,57 @@ html, body {
   left: 180px;
 }
 
-/* Home Page Styles */
-#home-map {
+/* Home and Vendor Page Styles */
+#home-map,
+#vendor-map {
   width: 820px;
   height: 1026px;
 }
 
 #truck_list {
   background-image: url("../images/background-donuts-home.jpeg");
+}
+#vendor-info {
+  background-image: url("../images/background-donuts-vendor2.jpg");
+}
+
+#truck_list,
+#vendor-info {
   background-repeat: no-repeat;
   background-size: cover;
   width: 621px;
   height: 1026px;
+}
+
+.vendor-title {
+  color: #FFFFFF;
+  font-family: Lato;
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 37px;
+  text-align: left;
+}
+
+.form-add-location {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  width: 600px;
+  height: 300px;
+}
+
+#id_address,
+#id_latitude,
+#id_longitude {
+  background-color: #FFFFFF;
+  border: 1px solid #8492A6;
+  border-radius: 5px;
+  width: 265px;
+  height: 50px;
+}
+
+.list-of-locations {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  width: 600px;
+  height: 600px;
 }

@@ -7,10 +7,10 @@
 {% block content %}
 
 <div class="row">
-  <div class="col vendor_info">
+  <div id="vendor-info" class="col">
 
     <!-- Begin add location form -->
-    <div id="location_add" class="col">
+    <div id="location-add" class="col">
 
       {% block add_location %}
         {% include 'vendor/add_location.html'%}
@@ -19,7 +19,7 @@
     </div>
 
     <!-- Begin location history list -->
-    <div id="location_list" class="col">
+    <div id="location-list" class="col">
       {% block list_location %}
         {% include 'vendor/list_location.html'%}
       {% endblock %}
