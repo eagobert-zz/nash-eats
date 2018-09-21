@@ -20,10 +20,10 @@
   {% if user.is_authenticated %}
 
   <div>
-    <button id="btn-profile" class="btn btn-outline-success my-2 my-sm-0" type="submit"><a class="btn-text" href="">Vendor Profile</a></button>
+    {#<button id="btn-profile" class="btn btn-outline-success my-2 my-sm-0" type="submit"><a class="btn-text" href="{% url 'website:profile' %}">Vendor Profile</a></button>#}
 
     <button id="btn-logout" class="btn btn-outline-success my-2 my-sm-0" type="submit"><a class="btn-text" href="{% url 'logout' %}">Logout</a></button>
-
+    
   </div>
 
   {% endif %}
