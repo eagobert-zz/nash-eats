@@ -51,7 +51,6 @@ function getDestinations() {
       // Loop thru sorted data
       for (var i = 0; i < data_sort.length; i++) {
 
-
         //If data is not in the array named "seen"
         if (!seen.includes(data_sort[i].vendor_id)) {
 
@@ -71,7 +70,6 @@ function getDestinations() {
       return destinations;
     })
     .then(destinations => {
-
 
       // Loop thru destinations and add marker to google map
       for (var i = 0; i < destinations.length; i++) {
@@ -95,7 +93,7 @@ function codeAddress() {
 
     if (status == 'OK') {
 
-      map.setCenter(results[0].geometry.location);
+      // map.setCenter(results[0].geometry.location);
       originAddress = results[0].formatted_address;
       console.log("Origin: ", originAddress);
       getDestinations();
