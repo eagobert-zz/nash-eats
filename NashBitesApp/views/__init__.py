@@ -5,3 +5,4 @@ from .home import HomeView
 from .register import Register
 from .login import Login
 from .navigation import NavView
+from .profile import ProfileView

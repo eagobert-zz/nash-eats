@@ -1,4 +1,5 @@
 from django.urls import path
+from django.conf.urls import url
 from . import views
 
 
@@ -15,5 +16,6 @@ urlpatterns = [
   path('home/', views.HomeView ,name='home'),
   path('vendor/', views.VendorView, name='vendor'),
   path('location/', views.Location_List, name='locations'),
-  path('login/', views.Login, name='login'),
+  # path('login/', views.Login, name='login'),
+  url(r'^profile/(?P<username>[\w.@+-]+)/$', views.ProfileView, name='profile'),
 ]
